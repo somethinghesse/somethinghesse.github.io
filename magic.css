@@ -6,5 +6,8 @@
 button {
   color: white;
   font-size: 20px;
-  background-color: dark-gray;
+  background-color: #AAAAAA;
+  border: none;
+  margin: 3px 1px;
+  text-decoration: none;
 }
