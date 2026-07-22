@@ -4,6 +4,7 @@
 }
 
 button.prop {
+  position: absolute;
   color: white;
   font-size: 20px;
   background-color: #AAAAAA;
