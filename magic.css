@@ -3,7 +3,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-button {
+.prop {
   color: white;
   font-size: 20px;
   background-color: #AAAAAA;
