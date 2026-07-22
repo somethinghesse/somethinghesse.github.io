@@ -17,7 +17,7 @@ button.prop {
 }
 
 button.pad {
-  left: 35px;
+  margin: 35px;
 }
 
 .wrap {
