@@ -2,3 +2,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.button {
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: gray;
+}
