@@ -6,11 +6,12 @@
 button.prop {
   position: relative;
   color: white;
-  font-size: 20px;
+  font-size: 70px;
   background-color: #AAAAAA;
   border: none;
   margin: 3px 1px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .wrap {
