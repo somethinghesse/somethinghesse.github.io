@@ -4,6 +4,8 @@
 }
 
 button.prop {
+  width: 120px;
+  height: 120px;
   position: relative;
   color: white;
   font-size: 70px;
