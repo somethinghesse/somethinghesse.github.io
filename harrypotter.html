@@ -4,6 +4,30 @@
 <title>Harry.</title>
 </head>
 <body>
+<script>
+let inc = -1;
+const texts = ["<img id=\"fit\" src=\"harry.png\" alt=Hi>", "<h2><strong>Harry Potter and the treuvdsnffewrpep</strong></h2> <p>The e-book by somethinghesse on Github</p>", "<h2><strong>* Chapter One *</strong></h2><h3><strong>The Evil Weekend</strong></h3>", "hi"];
+function frwd() {
+	inc++;
+	document.getElementById("txtpaige").innerHTML = texts[inc];
+    if(inc <= 0){
+    	document.getElementById("stopbkwd").disabled = true;
+	}
+    else{
+    	document.getElementById("stopbkwd").disabled = false;
+    }
+}
+function bkwd() {
+	inc--;
+	document.getElementById("txtpaige").innerHTML = texts[inc];
+    if(inc <= 0){
+    	document.getElementById("stopbkwd").disabled = true;
+	}
+    else{
+    	document.getElementById("stopbkwd").disabled = false;
+    }
+}
+</script>
 <style>
 #gradient {
 	width: 400px;
@@ -20,14 +44,23 @@
 	text-shadow: 2px 2px 1px #999999;
 }
 
-#img {
+#fit {
 	width: 300px;
 	height: 400px;
+}
+
+.paige {
+	background-color:#efedde;
 }
 </style>
 
 <h1 id="title">Harry Potter and the treuvdsnffewrpep</h1>
-<img id="img" src="harry.png" alt=Hi">
+<!--<img id="fit" src="harry.png" alt=Hi>-->
+<div id="fit" class="paige">
+<p id="txtpaige"></p>
+</div>
+<button id="stopbkwd" onclick="bkwd()" disabled><</button>
+<button id="stopfrwd" onclick="frwd()">></button>
 
 <hr>
 
