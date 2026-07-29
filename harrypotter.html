@@ -6,10 +6,11 @@
 <body>
 <script>
 let inc = -1;
-const texts = ["<img id=\"fit\" src=\"harry.png\" alt=Hi>", "<h2><strong>Harry Potter and the treuvdsnffewrpep</strong></h2> <p>The e-book by somethinghesse on Github</p>", "<h2><strong>* Chapter One *</strong></h2><h3><strong>The Evil Weekend</strong></h3>", "hi"];
+const texts = ["<h2><strong>Harry Potter and the treuvdsnffewrpep</strong></h2> <p>The e-book by somethinghesse on Github</p>", "<h2><strong>* Chapter One *</strong></h2><h3><strong>The Evil Weekend</strong></h3>", "hi"];
 function frwd() {
 	inc++;
 	document.getElementById("txtpaige").innerHTML = texts[inc];
+    document.getElementById("disarm").hidden = true;
     if(inc <= 0){
     	document.getElementById("stopbkwd").disabled = true;
 	}
@@ -44,7 +45,7 @@ function bkwd() {
 	text-shadow: 2px 2px 1px #999999;
 }
 
-#fit {
+.fit {
 	width: 300px;
 	height: 400px;
 }
@@ -55,8 +56,8 @@ function bkwd() {
 </style>
 
 <h1 id="title">Harry Potter and the treuvdsnffewrpep</h1>
-<!--<img id="fit" src="harry.png" alt=Hi>-->
-<div id="fit" class="paige">
+<div class="fit paige">
+<img class="fit" id="disarm" src="harry.png" alt=Hi>
 <p id="txtpaige"></p>
 </div>
 <button id="stopbkwd" onclick="bkwd()" disabled><</button>
@@ -71,12 +72,6 @@ function bkwd() {
 </div>
 
 <p>Inspiring.</p>
-
-<hr>
-
-<h2><strong>* Chapter One *</strong></h2>
-
-<h3><strong>The Evil Weekend</strong></h3>
 
 </body>
 </html>
