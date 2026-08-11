@@ -1,24 +1,70 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>test</title>
-  
-    <meta property="og:title" content="Hi" />
-    <meta property="og:description" content="Listen to my custom track right inside Discord!" />
-    <meta property="og:site_name" content="github" />
-    <meta property="og:image" content="https://somethinghesse.github.io/test" />
-
-    <meta property="og:video:url" content="https://somethinghesse.github.io/test" />
-    <meta property="og:video:secure_url" content="https://somethinghesse.github.io/test" />
-    <meta property="og:video:type" content="text/html" />
-    <meta property="og:video:width" content="400" />
-    <meta property="og:video:height" content="150" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Discord Activity</title>
     
-    <meta name="twitter:card" content="player" />
-    <meta name="twitter:player" content="https://somethinghesse.github.io/test" />
-    <meta name="twitter:player:width" content="400" />
-    <meta name="twitter:player:height" content="150" />
+    <!-- Load the official Discord Embedded App SDK via jsDelivr CDN -->
+    <script src="https://jsdelivr.net"></script>
+    
+    <style>
+        body {
+            background-color: #313338; /* Matches Discord Dark Mode */
+            color: #ffffff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        button {
+            background-color: #5865F2; /* Discord Blurple */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #4752C4; }
+    </style>
 </head>
 <body>
-    <p>Hi</p>
+
+    <h1>Hello from GitHub Pages!</h1>
+    <p>This UI is running completely inside a native Discord iframe.</p>
+    <button id="actionBtn">Click Me</button>
+
+    <script>
+        // 1. Instantiating the Discord SDK using the global object window.discordSdk
+        // Replace '123456789012345678' with your actual copied Application ID
+        const discordSdk = new window.discordSdk.DiscordSDK({ 
+            client_id: "1536700982090530887" 
+        });
+
+        // 2. Initialize connection handshake with the Discord desktop/mobile client
+        async function setupDiscordActivity() {
+            try {
+                await discordSdk.ready();
+                console.log("Discord SDK is ready and authenticated inside the client!");
+                
+                // Once ready, you can access channel context or authorize the user
+                // For a basic web interface or game, you can run normal JS here
+            } catch (error) {
+                console.error("Initialization failed. Are you running outside of Discord?", error);
+            }
+        }
+
+        // Run setup sequence immediately on page load
+        setupDiscordActivity();
+
+        // Standard JS interactivity works completely normally
+        document.getElementById('actionBtn').addEventListener('click', () => {
+            alert('Button interactions work flawlessly here!');
+        });
+    </script>
 </body>
 </html>
