@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-
-<html>
-<img src="welcome3D.png" alt="your INTERNET is SO BAD!!!!!!!!!!!!!!!!!!" width="400" height="200">
-  <head>
-    <link rel="stylesheet" href="styles.css">
-    <title>Hi</title>
-    <meta content="Embed Title" property="og:title" />
-    <meta style="background-color:DodgerBlue;" content="Test" property="og:description" />
-    <meta content="<iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay; encrypted-media&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2373898019&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true&quot;></iframe><div style=&quot;font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;&quot;><a href=&quot;https://soundcloud.com/hesse-something&quot; title=&quot;hesse something&quot; target=&quot;_blank&quot; style=&quot;color: #cccccc; text-decoration: none;&quot;>hesse something</a> · <a href=&quot;https://soundcloud.com/hesse-something/techno-song&quot; title=&quot;techno song&quot; target=&quot;_blank&quot; style=&quot;color: #cccccc; text-decoration: none;&quot;>techno song</a></div>" />
-    <meta content="<iframe width=&quot;100%&quot; height=&quot;300&quot; scrolling=&quot;no&quot; frameborder=&quot;no&quot; allow=&quot;autoplay; encrypted-media&quot; src=&quot;https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2373898019&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true&quot;></iframe><div style=&quot;font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;&quot;><a href=&quot;https://soundcloud.com/hesse-something&quot; title=&quot;hesse something&quot; target=&quot;_blank&quot; style=&quot;color: #cccccc; text-decoration: none;&quot;>hesse something</a> · <a href=&quot;https://soundcloud.com/hesse-something/techno-song&quot; title=&quot;techno song&quot; target=&quot;_blank&quot; style=&quot;color: #cccccc; text-decoration: none;&quot;>techno song</a></div>" property="og:image" />
-    <!--<meta content="630" property="og:image:width"/>
-    <meta content="630" property="og:image:height"/>-->
-    <meta name="theme-color" content="#0000AA">
-    <meta content="article" property="og:type">
-  </head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Discord Activity</title>
+    
+    <!-- Load the official Discord Embedded App SDK via jsDelivr CDN -->
+    <script src="https://jsdelivr.net"></script>
+</head>
 <body>
+
+    <h1 style="color: white;">Hello from GitHub Pages!</h1>
+    <p style="color: white;">If you can read this, your iframe is loading successfully!</p>
+
+    <script>
+        // CRITICAL FIX: Ensure the package lookup uses EXACT matching casing strings
+        const discordSdk = new window.discordSdk.DiscordSDK({ 
+            client_id: "YOUR_COPIED_APPLICATION_ID_HERE" // Change this to your real ID string!
+        });
+
+        async function setupDiscordActivity() {
+            try {
+                // Initialize the mandatory connection handshaking sequence
+                await discordSdk.ready();
+                console.log("Handshake complete!");
+            } catch (error) {
+                console.error("SDK initialization failed:", error);
+            }
+        }
+
+        setupDiscordActivity();
+    </script>
 <script>
 const express = require('express');
 
@@ -57,3 +73,4 @@ app.listen(PORT, () => {
 <img src="games.png" alt="your INTERNET is SO BAD!!!!!!!!!!!!!!!!!!" width="200" height="100">
 
 <p>a game about <a href="https://somethinghesse.github.io/magicgrid"><em>magic squares </em>and <em>tic tac toe</em></a></p>
+</body>
