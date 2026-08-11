@@ -8,37 +8,45 @@
     <!-- Load the official Discord Embedded App SDK -->
     <script src="https://jsdelivr.net"></script>
 </head>
-<body>
+<body style="background-color: #313338; color: white; font-family: sans-serif; text-align: center; padding-top: 10%;">
 
-    <h1 style="color: white; text-align: center; margin-top: 20%;">Hello From Discord App!</h1>
-    <p style="color: white; text-align: center;">Your GitHub Pages root file is completely working now.</p>
+    <h1>My Discord Activity Profile</h1>
+    <p id="status-text">Detecting platform connection status...</p>
 
     <script>
-        // 1. Tell Discord's internal proxy mapping tool that your domain is authorized
-        if (window.discordSdk && window.discordSdk.patchUrlMappings) {
-            window.discordSdk.patchUrlMappings([
-                { prefix: '/', target: 'somethinghesse.github.io' }
-            ]);
-        }
+        // Check if the current webpage is running inside the secure Discord iframe proxy
+        const isRunningInDiscord = window.location.hostname.endsWith('.discordsays.com') || window.location.search.includes('frame_id');
 
-        // 2. Initialize the main SDK structure
-        const discordSdk = new window.discordSdk.DiscordSDK({ 
-            client_id: "YOUR_DISCORD_APPLICATION_CLIENT_ID" // Paste your copied application ID string here!
-        });
-
-        async function setupDiscordActivity() {
-            try {
-                // Initialize the structural handshake with the desktop app wrapper frame
-                await discordSdk.ready();
-                console.log("Handshake verified successfully inside the client app!");
-            } catch (error) {
-                console.error("SDK Setup Failed:", error);
+        if (isRunningInDiscord) {
+            // Apply the proxy routing patch strictly for the Discord client environment
+            if (window.discordSdk && window.discordSdk.patchUrlMappings) {
+                window.discordSdk.patchUrlMappings([
+                    { prefix: '/', target: 'somethinghesse.github.io' }
+                ]);
             }
-        }
 
-        setupDiscordActivity();
+            const discordSdk = new window.discordSdk.DiscordSDK({ 
+                client_id: "YOUR_DISCORD_APPLICATION_CLIENT_ID" // Replace with your numeric ID string!
+            });
+
+            async function setupDiscordActivity() {
+                try {
+                    document.getElementById('status-text').innerText = "Connecting to Discord Desktop Shell...";
+                    await discordSdk.ready(); // Handshake will now securely succeed inside the desktop client
+                    document.getElementById('status-text').innerText = "Connected! Running inside the Discord App.";
+                } catch (error) {
+                    console.error("SDK Setup Failed:", error);
+                    document.getElementById('status-text').innerText = "Discord connection error.";
+                }
+            }
+
+            setupDiscordActivity();
+        } else {
+            // Safe fallback bypass: Running in a standard web browser (Firefox, Chrome, Safari)
+            console.log("Running outside of Discord environment. Skipping SDK initialization setup.");
+            document.getElementById('status-text').innerText = "Running standalone inside a regular web browser interface.";
+        }
     </script>
-</script>
 <hr>
 <h1>Hi.</h1>
 <pre>you have made a discovery</pre>
