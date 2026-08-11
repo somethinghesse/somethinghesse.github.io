@@ -70,6 +70,18 @@
 </head>
 
 <body style="background: #313338; color: white; font-family: Arial; text-align: center; padding-top: 100px;">
+    <script>
+import { DiscordSDK } from "@discord/embedded-app-sdk";
+
+const discordSdk = new DiscordSDK(process.env.DISCORD_CLIENT_ID);
+
+async function setupDiscordSdk() {
+  await discordSdk.ready();
+  console.log("Discord SDK is ready");
+  // Now authorize and render your app
+}
+
+    </script>
 
     <h1>IT WORKS!</h1>
     <p>If you can see this inside Discord, GitHub Pages is loading correctly.</p>
