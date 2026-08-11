@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Discord Activity</title>
     
-    <!-- Load the official Discord Embedded App SDK -->
-    <script src="https://jsdelivr.net"></script>
+    <!-- FIX 1: Loaded the correct unpkg bundle for the Embedded App SDK -->
+    <script src="https://unpkg.com"></script>
 </head>
 <body style="background-color: #313338; color: white; text-align: center; padding-top: 10%;">
 
@@ -14,25 +14,21 @@
     <p id="status-text">Detecting platform connection status...</p>
 
     <script>
-        // Check if the current webpage is running inside the secure Discord iframe proxy
         const isRunningInDiscord = window.location.hostname.endsWith('.discordsays.com') || window.location.search.includes('frame_id');
 
         if (isRunningInDiscord) {
-            // Apply the proxy routing patch strictly for the Discord client environment
-            if (window.discordSdk && window.discordSdk.patchUrlMappings) {
-                window.discordSdk.patchUrlMappings([
-                    { prefix: '/', target: 'somethinghesse.github.io' }
-                ]);
-            }
-
+            // FIX 2: Correctly reference the global script bundle instantiation
             const discordSdk = new window.discordSdk.DiscordSDK({ 
-                client_id: "YOUR_DISCORD_APPLICATION_CLIENT_ID" // Replace with your numeric ID string!
+                clientId: "YOUR_DISCORD_APPLICATION_CLIENT_ID" // FIX 3: Change client_id to camelCase clientId!
             });
 
             async function setupDiscordActivity() {
                 try {
                     document.getElementById('status-text').innerText = "Connecting to Discord Desktop Shell...";
-                    await discordSdk.ready(); // Handshake will now securely succeed inside the desktop client
+                    
+                    // FIX 4: Complete the handshake before handling any proxy configurations
+                    await discordSdk.ready(); 
+                    
                     document.getElementById('status-text').innerText = "Connected! Running inside the Discord App.";
                 } catch (error) {
                     console.error("SDK Setup Failed:", error);
@@ -42,8 +38,7 @@
 
             setupDiscordActivity();
         } else {
-            // Safe fallback bypass: Running in a standard web browser (Firefox, Chrome, Safari)
-            console.log("Running outside of Discord environment. Skipping SDK initialization setup.");
+            console.log("Running outside of Discord environment.");
             document.getElementById('status-text').innerText = "Running standalone inside a regular web browser interface.";
         }
     </script>
@@ -67,7 +62,10 @@
   
       enough</pre>
 <hr>
-<img src="games.png" alt="your INTERNET is SO BAD!!!!!!!!!!!!!!!!!!" width="200" height="100">
+<!-- FIX 5: Use a relative path or an absolute GitHub Pages URL so Discord proxies the image correctly -->
+<img src="./games.png" alt="your INTERNET is SO BAD!!!!!!!!!!!!!!!!!!" width="200" height="100">
 
 <p>a game about <a href="https://somethinghesse.github.io/magicgrid"><em>magic squares </em>and <em>tic tac toe</em></a></p>
 </body>
+</html>
+
