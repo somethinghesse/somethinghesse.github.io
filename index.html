@@ -4,44 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Discord Activity</title>
-    
-    <!-- FIX 1: Point to an exact, valid UMD bundle path that passes Discord's desktop CSP -->
-    <script src="https://unpkg.com"></script>
 </head>
+
 <body style="background-color: #313338; color: white; text-align: center; padding-top: 10%; font-family: sans-serif;">
 
     <h1>My Discord Activity Profile</h1>
-    <p id="status-text">Detecting platform connection status...</p>
+    <p id="status-text">Starting...</p>
 
-    <script>
-        // Check if running inside Discord's sandboxed environment
-        const isRunningInDiscord = window.location.hostname.endsWith('.discordsays.com') || window.location.search.includes('frame_id');
+    <!-- Discord SDK -->
+    <script type="module">
+        import { DiscordSDK } from
+            "https://unpkg.com/@discord/embedded-app-sdk@2.5.0/output/index.mjs";
 
-        if (isRunningInDiscord) {
-            document.getElementById('status-text').innerText = "Connecting to Discord Desktop Shell...";
+        const CLIENT_ID = "1536700982090530887";
+        const status = document.getElementById("status-text");
 
-            // FIX 2: Correct instantiation using camelCase 'clientId' for the global object bundle
-            const sdkInstance = new window.discordSdk.DiscordSDK({ 
-                clientId: "YOUR_DISCORD_APPLICATION_CLIENT_ID" // <-- Replace with your numeric ID string!
-            });
+        try {
+            status.textContent = "Connecting to Discord...";
 
-            async function setupDiscordActivity() {
-                try {
-                    // FIX 3: Desktop client requires this handshake immediately to resolve the blank frame
-                    await sdkInstance.ready(); 
-                    document.getElementById('status-text').innerText = "Connected! Running inside the Discord App.";
-                } catch (error) {
-                    console.error("SDK Setup Failed:", error);
-                    document.getElementById('status-text').innerText = "Discord connection error.";
-                }
-            }
+            const discordSdk = new DiscordSDK(CLIENT_ID);
 
-            setupDiscordActivity();
-        } else {
-            console.log("Running outside of Discord environment.");
-            document.getElementById('status-text').innerText = "Running standalone inside a regular web browser interface.";
+            await discordSdk.ready();
+
+            status.textContent = "Connected! Running inside Discord.";
+            console.log("Discord SDK connected!");
+
+        } catch (error) {
+            console.error("Discord SDK failed:", error);
+            status.textContent = "Discord connection error: " + error.message;
         }
     </script>
+
 <hr>
 <h1>Hi.</h1>
 <pre>you have made a discovery</pre>
