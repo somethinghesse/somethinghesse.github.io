@@ -86,7 +86,7 @@ Go ahead and take the test to see if you're one of the potential candidates to b
   </div><br>
   <button type="submit">answer</button>
   </form>
-  <div id="res" style="background-color: #DEDEDE;"></div>
+  <div id="res" style="background-color: #DEDEDE;">your results go here</div>
   
   <script>
   document.getElementById('foorm').addEventListener('submit', function(event) {
@@ -138,9 +138,10 @@ Go ahead and take the test to see if you're one of the potential candidates to b
     }
     
     resultBox.innerHTML = `
+                <p>Score: ${score}</p>
                 <p><em>${desc}</em></p>
             `;
-  )};
+  });
   </script>
 </body>
 </html>
