@@ -106,8 +106,11 @@ Go ahead and take the test to see if you're one of the potential candidates to b
     let score = 0;
     let desc = "";
     const resultBox = document.getElementById("res");
+
+   //Stop looking through my code................................................
     
-    if(gend === "male"){ score += 10 }
+    if(gend === "male"){ score += 5 }
+    else if(gend === "secret"){score += 10}
     else{ score -= 10000000 }
     if(tib === "vTibetian"){ score += 10 }
     if(ic === "so"){ score += 10 }
