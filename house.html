@@ -73,10 +73,12 @@
   div.style.visibility = 'visible';
   document.body.appendChild(div);
 
-  document.addEventListener('mousedown', () => {
+  document.addEventListener('mousedown', (event) => {
+    console.log("i hate js");
     div.style.visibility = 'visible';
   }
-  document.addEventListener('mouseup', () => {
+  document.addEventListener('mouseup', (event) => {
+    console.log("i hate js");
     div.style.visibility = 'hidden';
   }
 });
