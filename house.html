@@ -66,7 +66,7 @@
   var div = document.createElement("div");
   div.style.width = "750px";
   div.style.height = "750px";
-  div.style.background = "red";
+  div.style.background = "black";
   div.style.color = "white";
   div.style.fontFamily = "'Courier New', monospace";
   div.innerHTML = house;
@@ -74,12 +74,10 @@
   document.body.appendChild(div);
 
   document.addEventListener('mousedown', (event) => {
-    console.log("i hate js");
-    div.style.visibility = 'visible';
+    div.style.display = 'block';
   });
   document.addEventListener('mouseup', (event) => {
-    console.log("i hate js");
-    div.style.visibility = 'hidden';
+    div.style.display = 'none';
   });
 })();
 </script>
