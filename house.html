@@ -69,21 +69,18 @@
   div.style.background = "red";
   div.style.color = "white";
   div.style.position = "absolute";
-  /*div.style.top = "50%";
+  div.style.top = "50%";
   div.style.left = "50%";
   div.style.marginTop = "-375px";
-  div.style.marginLeft = "-375px";*/
-  div.style.justifyContent = "center";
-  div.style.alignItems = "center";
-  div.style.margin = "0";
-  div.style.minHeight = "100vh";
+  div.style.marginLeft = "-375px";
+  div.style.zIndex = "99";
   div.style.fontFamily = "'Courier New', monospace";
   div.style.display = "none";
   div.innerHTML = house;
   document.body.appendChild(div);
 
   document.addEventListener('mousedown', (event) => {
-    div.style.display = 'flex';
+    div.style.display = 'fixed';
   });
   document.addEventListener('mouseup', (event) => {
     div.style.display = 'none';
