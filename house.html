@@ -64,13 +64,21 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░`
   // my boy is so beautiful
   var div = document.createElement("div");
-  div.style.width = "790px";
+  div.style.width = "750px";
   div.style.height = "750px";
   div.style.background = "red";
   div.style.color = "white";
   div.style.fontFamily = "'Courier New', monospace";
   div.innerHTML = house;
   document.body.appendChild(div);
+
+  document.addEventListener('mousedown', () => {
+    div.style.visibility = 'visible';
+  }
+  document.addEventListener('mouseup', () => {
+    div.style.visibility = 'hidden';
+  }
+});
 })();
 </script>
 <hr>
