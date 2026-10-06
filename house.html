@@ -67,7 +67,7 @@
   div.style.height = "750px";
   div.style.background = "red";
   div.style.color = "white";
-  div.style.position = "absolute";
+  div.style.position = "fixed";
   div.style.top = "50%";
   div.style.left = "50%";
   /*div.style.marginTop = "-375px";
@@ -80,7 +80,7 @@
   document.body.appendChild(div);
 
   document.addEventListener('mousedown', (event) => {
-    div.style.display = 'fixed';
+    div.style.display = 'block';
   });
   document.addEventListener('mouseup', (event) => {
     div.style.display = 'none';
