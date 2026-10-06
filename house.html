@@ -70,8 +70,9 @@
   div.style.position = "absolute";
   div.style.top = "50%";
   div.style.left = "50%";
-  div.style.marginTop = "-375px";
-  div.style.marginLeft = "-375px";
+  /*div.style.marginTop = "-375px";
+  div.style.marginLeft = "-375px";*/
+  div.style.transform = "translate(50%, 50%);
   div.style.zIndex = "99";
   div.style.fontFamily = "'Courier New', monospace";
   div.style.display = "none";
@@ -79,7 +80,7 @@
   document.body.appendChild(div);
 
   document.addEventListener('mousedown', (event) => {
-    div.style.display = 'flex';
+    div.style.display = 'fixed';
   });
   document.addEventListener('mouseup', (event) => {
     div.style.display = 'none';
