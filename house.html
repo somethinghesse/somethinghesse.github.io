@@ -137,16 +137,16 @@
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░`
   // my boy is so beautiful
-  let offsetx = 0;
-  let offsety = 0;
+  let offsetx = 50;
+  let offsety = 50;
   var div = document.createElement("div");
   div.style.width = "750px";
   div.style.height = "750px";
   div.style.background = "red";
   div.style.color = "white";
   div.style.position = "fixed";
-  div.style.top = `50% + ${offsety}px`;
-  div.style.left = `50% + ${offsetx}px`;
+  div.style.top = `${offsety}%`;
+  div.style.left = `${offsetx}%`;
   /*div.style.marginTop = "-37rs5px";
   div.style.marginLeft = "-375px";*/
   div.style.transform = `translate(-50%, -50%)`;
@@ -168,22 +168,22 @@
 	  		switch (e.keyCode) {
                 case 37:
                     //left
-					console.log("Hi");
+					console.log(offsetx);
                     --offsetx;
                     break;
                 case 38:
                     //up
-					console.log("Hi");
+					console.log(offsety);
                     --offsety;
                     break;
                 case 39:
                     //right
-					console.log("Hi");
+					console.log(offsetx);
                     ++offsetx;
                     break;
                 case 40:
                     //down
-					console.log("Hi");
+					console.log(offsety);
                     ++offsety;
                     break;
             }
