@@ -145,8 +145,8 @@
   div.style.background = "red";
   div.style.color = "white";
   div.style.position = "fixed";
-  div.style.top = `${offsety}%`;
-  div.style.left = `${offsetx}%`;
+  div.style.top = `50%`;
+  div.style.left = `50%`;
   /*div.style.marginTop = "-37rs5px";
   div.style.marginLeft = "-375px";*/
   div.style.transform = `translate(-50%, -50%)`;
@@ -165,28 +165,38 @@
   document.addEventListener("keydown", ass, false);
 
   function ass(e) {
-	  		switch (e.keyCode) {
+	  		if(div.style.display === 'block'){
+				switch (e.keyCode) {
                 case 37:
                     //left
 					console.log(offsetx);
-                    --offsetx;
+                    if(offsetx > 30){
+						--offsetx;
+					}
                     break;
                 case 38:
                     //up
 					console.log(offsety);
-                    --offsety;
+                    if(offsety > 30){
+						--offsety;
+					}
                     break;
                 case 39:
                     //right
 					console.log(offsetx);
-                    ++offsetx;
+                    if(offsetx < 80){
+						++offsetx;
+					}
                     break;
                 case 40:
                     //down
 					console.log(offsety);
-                    ++offsety;
+                    if(offsety < 80){
+						++offsety;
+					}
                     break;
             }
+			}
 	  		div.style.top = `${offsety}%`;
   			div.style.left = `${offsetx}%`;
   }
