@@ -147,7 +147,7 @@
   div.style.position = "fixed";
   div.style.top = "50%";
   div.style.left = "50%";
-  /*div.style.marginTop = "-375px";
+  /*div.style.marginTop = "-37rs5px";
   div.style.marginLeft = "-375px";*/
   div.style.transform = `translate(${offsetx}%, ${offsety}%)`;
   div.style.zIndex = "99";
@@ -162,7 +162,7 @@
   document.addEventListener('mouseup', (event) => {
     div.style.display = 'none';
   });
-  document.onkeydown = function (e) {
+  document.addEventListener('keydown', (event) => {
             switch (e.keyCode) {
                 case 37:
                     //left
@@ -181,7 +181,7 @@
                     ++offsety;
                     break;
             }
-  };
+  });
 })();
 </script>
 <hr>
