@@ -164,20 +164,24 @@
   });
   document.addEventListener('keydown', (event) => {
             switch (event.key) {
-                case 37:
+                case 'ArrowLeft':
                     //left
+					console.log("Hi");
                     --offsetx;
                     break;
-                case 38:
+                case 'ArrowUp':
                     //up
+					console.log("Hi");
                     --offsety;
                     break;
-                case 39:
+                case 'ArrowRight':
                     //right
+					console.log("Hi");
                     ++offsetx;
                     break;
-                case 40:
+                case 'ArrowDown':
                     //down
+					console.log("Hi");
                     ++offsety;
                     break;
             }
