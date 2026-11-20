@@ -6,10 +6,7 @@
   <body>
     <script>
       let page = -1;
-	let text = "";
-	(async () => {
-	  text = await read("./testo.txt");
-	})();
+	  const text = await read("./testo.txt");
       const chars = 1239;
       const len = text.length;
       let pages = [];
