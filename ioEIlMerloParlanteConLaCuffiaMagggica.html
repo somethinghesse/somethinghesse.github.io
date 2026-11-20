@@ -6,15 +6,7 @@
   <body>
     <script>
       let page = -1;
-		let text = "";
-      try {
-		    const response = await fetch(file);
-		    
-		    text = await response.text();
-			console.log(text);
-	} catch (error) {
-		    console.log(error);
-	}
+	  const text = await read("./testo.txt");
       const chars = 1239;
       const len = text.length;
       let pages = [];
@@ -42,6 +34,17 @@
           document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
         }
       }
+	async function read(file){
+		try {
+		    const response = await fetch(file);
+		    
+		    const text = await response.text();
+			console.log(text);
+			return text;
+		} catch (error) {
+		    console.log(error);
+		}
+	}
     </script>
     <style>
       body {
