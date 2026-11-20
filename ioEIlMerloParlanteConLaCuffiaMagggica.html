@@ -17,8 +17,7 @@
       }
       if(Math.floor(len/chars) != len/chars){
         pages.push(text.substring(Math.floor(len/chars)));
-      }
-	})();
+	  }
 
       function frwd(){
         page++;
@@ -36,6 +35,7 @@
           document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
         }
       }
+	})();
 	async function read(file){
 		try {
 		    const response = await fetch(file);
