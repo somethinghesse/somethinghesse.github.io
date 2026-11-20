@@ -15,7 +15,7 @@
         pages.push(text.substring(i*chars, (i+1)*chars));
       }
       if(Math.floor(len/chars) != len/chars){
-        pages.push(str.substring(Math.floor(len/chars)));
+        pages.push(text.substring(Math.floor(len/chars)));
       }
 
       function frwd(){
@@ -37,11 +37,11 @@
       function read(file){
         let str = "";
 
-  		  file.open("r");
-		    while(!file.eof) { 
-			    str += (file.readln() + "\n");
-		    };
-		    file.close();
+  		file.open("r");
+		while(!file.eof) { 
+			str += (file.readln() + "\n");
+		};
+		file.close();
         return str;
       }
     </script>
