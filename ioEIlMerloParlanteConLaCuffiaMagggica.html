@@ -6,7 +6,7 @@
   <body>
     <script>
       let page = -1;
-      const text = read("./testo.txt");
+      let text = String(read("./testo.txt"));
       const chars = 1239;
       const len = text.length;
       let pages = [];
@@ -36,15 +36,13 @@
       }
       async function read(file){
         try {
-		    // Relative paths on GitHub Pages resolve from the HTML file's URL
 		    const response = await fetch(file);
-		    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 		    
 		    const text = await response.text();
 			console.log(text);
 		    return text;
 		} catch (error) {
-		    console.error('Failed to read file:', error);
+		    console.log(error);
 		}
       }
     </script>
