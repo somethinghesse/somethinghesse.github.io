@@ -7,7 +7,7 @@
     <script>
       let page = -1;
       const text = "TEST W34F43UFG34FG9U34FG34'FG34G34G3I4G349IG034IG0934IG0I934GI0340G9I340GI9340G9I340G9I340G9I3409GI3409GI3409IG3409GI3409IG3409IG034IG0349IG0349IG0349G0934IG340IG340I";
-      const chars = 50;
+      const chars = 10;
       const len = text.length;
       let pages = [];
 
@@ -36,6 +36,7 @@
     <style>
       #leftPage {
         background-color: #efedde;
+        white-space: nowrap;
         display: block;
         margin: auto;
         width: 397px;
@@ -45,6 +46,7 @@
       }
       #rightPage {
         background-color: #e6e3d1;
+        white-space: nowrap;
         display: block;
         margin: auto;
         width: 397px;
@@ -56,14 +58,17 @@
         display: block;
         width: 100%;
       }
+      #btn {
+        transform: translate(50%, -100%);
+      }
     </style>
     <h1>TEST</h1>
     <div id="leftPage"></div>
     <div id="rightPage">
     <img id="cover" src="merloparlante.png">
     </div>
-    <button id="bkwd" onclick="bwkd()" disabled><</button>
-    <button id="frwd" onclick="frwd()">></button>
+    <button id="bkwd btn" onclick="bwkd()" disabled><</button>
+    <button id="frwd btn" onclick="frwd()">></button>
   </body>
 </html>
 <!-- test -->
