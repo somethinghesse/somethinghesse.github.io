@@ -5,10 +5,10 @@
   </head>
   <body>
     <script>
-      const fs = require('node:fs');
+      const fs = require("node:fs");
       
       let page = -1;
-      const text = fs.readFileSync("testo.txt", "utf8");
+      const text = fs.readFileSync("./testo.txt", "utf8");
       const chars = 1239;
       const len = text.length;
       let pages = [];
