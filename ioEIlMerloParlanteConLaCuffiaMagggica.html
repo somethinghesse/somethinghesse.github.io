@@ -6,8 +6,9 @@
   <body>
     <script>
       let page = -1;
+	let text = "";
 	(async () => {
-	  const text = await read("./testo.txt");
+	  text = await read("./testo.txt");
 	})();
       const chars = 1239;
       const len = text.length;
