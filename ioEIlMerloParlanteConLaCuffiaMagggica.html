@@ -30,6 +30,8 @@
         document.getElementById("rightPage").innerHTML = pages[page*2+2];
         if(page == -1){
           document.getElementById("bkwd").disabled = true;
+          document.getElementById("leftPage").innerHTML = "";
+          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
         }
       }
     </script>
