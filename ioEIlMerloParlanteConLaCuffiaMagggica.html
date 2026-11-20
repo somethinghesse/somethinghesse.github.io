@@ -7,7 +7,7 @@
     <script>
       let page = -1;
       const text = "TEST W34F43UFG34FG9U34FG34'FG34G34G3I4G349IG034IG0934IG0I934GI0340G9I340GI9340G9I340G9I340G9I3409GI3409GI3409IG3409GI3409IG3409IG034IG0349IG0349IG0349G0934IG340IG340I";
-      const chars = 10;
+      const chars = 80;
       const len = text.length;
       let pages = [];
 
@@ -58,8 +58,8 @@
         display: block;
         width: 100%;
       }
-      #btn {
-        transform: translate(50%, -100%);
+      .btn {
+        transform: translate(50%, -200%);
       }
     </style>
     <h1>TEST</h1>
@@ -67,8 +67,8 @@
     <div id="rightPage">
     <img id="cover" src="merloparlante.png">
     </div>
-    <button id="bkwd btn" onclick="bwkd()" disabled><</button>
-    <button id="frwd btn" onclick="frwd()">></button>
+    <button class="btn" id="bkwd" onclick="bwkd()" disabled><</button>
+    <button class="btn" id="frwd" onclick="frwd()">></button>
   </body>
 </html>
 <!-- test -->
