@@ -6,6 +6,7 @@
   <body>
     <script>
       let page = -1;
+	(async () => {
 	  const text = await read("./testo.txt");
       const chars = 1239;
       const len = text.length;
@@ -17,6 +18,7 @@
       if(Math.floor(len/chars) != len/chars){
         pages.push(text.substring(Math.floor(len/chars)));
       }
+	})();
 
       function frwd(){
         page++;
