@@ -4,9 +4,8 @@
     <title>il merlo parlante</title>
   </head>
   <body>
-    <script>
+    <script type="module">
       let page = -1;
-	(async () => {
 	  const text = await read("./testo.txt");
       const chars = 1239;
       const len = text.length;
@@ -35,7 +34,6 @@
           document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
         }
       }
-	})();
 	async function read(file){
 		try {
 		    const response = await fetch(file);
