@@ -28,12 +28,15 @@
         page--;
         document.getElementById("leftPage").innerHTML = pages[page*2+1];
         document.getElementById("rightPage").innerHTML = pages[page*2+2];
-        if(page == 0){
+        if(page == -1){
           document.getElementById("bkwd").disabled = true;
         }
       }
     </script>
     <style>
+      body {
+        font-family: 'Courier New', monospace;
+      }
       #leftPage {
         background-color: #efedde;
         word-wrap: break-word;
@@ -59,10 +62,10 @@
         width: 100%;
       }
       #bkwd {
-        transform: translate(3500%, -2500%);
+        transform: translate(4500%, -2500%);
       }
       #frwd {
-        transform: translate(3500%, -2500%);
+        transform: translate(4500%, -2500%);
       }
     </style>
     <h1>TEST</h1>
