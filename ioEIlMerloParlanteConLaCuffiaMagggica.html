@@ -26,6 +26,7 @@
 			    document.getElementById("leftPage").style.backgroundColor = "#efedde";
 		        document.getElementById("rightPage").innerHTML = pages[page];
 		        document.getElementById("bkwd").disabled = false;
+				updatePageNum();
 		}
 		function bkwd(){
 		        page-=2;
@@ -37,6 +38,7 @@
 				  document.getElementById("leftPage").style.backgroundColor = "#FFFFFF";
 		          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
 		        }
+				updatePageNum();
 	    }
 		async function read(file){
 			try {
@@ -48,6 +50,9 @@
 			} catch (error) {
 			    console.log(error);
 			}
+		}
+		function updatePageNum(){
+			document.getElementById("pagNum").innerHTML = `Pagina: ${page-1} e ${page}`;
 		}
     </script>
     <style>
@@ -86,7 +91,7 @@
       }
     </style>
     <h2>IO E IL MERLO PARLANTE CON LA CUFFIA MAGGGICA</h2>
-	<p>Pagina: 0</p>
+	<p id="pagNum">Pagina: 0</p>
     <div id="leftPage"></div>
     <div id="rightPage">
     <img id="cover" src="merloparlante.png">
