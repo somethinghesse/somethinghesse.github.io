@@ -17,7 +17,7 @@
 		    	pages.push(text.substring(i*chars, (i+1)*chars));
 		    }
 		    if(Math.floor(len/chars) != len/chars){
-		        pages.push(text.substring(Math.floor(len/chars)));
+		        pages.push(text.substring(Math.floor(len/chars)*chars));
 			}
 		});
 		function frwd(){
