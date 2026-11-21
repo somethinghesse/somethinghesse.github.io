@@ -18,24 +18,23 @@
 		    if(Math.floor(len/chars) != len/chars){
 		        pages.push(text.substring(Math.floor(len/chars)));
 			}
+			function frwd(){
+			    page++;
+		        document.getElementById("leftPage").innerHTML = pages[page*2];
+		        document.getElementById("rightPage").innerHTML = pages[page*2+1];
+		        document.getElementById("bkwd").disabled = false;
+			}
+		    function bkwd(){
+		        page--;
+		        document.getElementById("leftPage").innerHTML = pages[page*2+1];
+		        document.getElementById("rightPage").innerHTML = pages[page*2+2];
+		        if(page == -1){
+		          document.getElementById("bkwd").disabled = true;
+		          document.getElementById("leftPage").innerHTML = "";
+		          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
+		        }
+	    	}
 		});
-
-		function frwd(){
-		    page++;
-	        document.getElementById("leftPage").innerHTML = pages[page*2];
-	        document.getElementById("rightPage").innerHTML = pages[page*2+1];
-	        document.getElementById("bkwd").disabled = false;
-		}
-	    function bkwd(){
-	        page--;
-	        document.getElementById("leftPage").innerHTML = pages[page*2+1];
-	        document.getElementById("rightPage").innerHTML = pages[page*2+2];
-	        if(page == -1){
-	          document.getElementById("bkwd").disabled = true;
-	          document.getElementById("leftPage").innerHTML = "";
-	          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
-	        }
-	    }
 		async function read(file){
 			try {
 			    const response = await fetch(file);
