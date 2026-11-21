@@ -6,17 +6,7 @@
   <body>
     <script>
       let page = -1;
-	  const text = "test";
-      const chars = 1239;
-      const len = text.length;
-      let pages = [];
-
-      for(let i = 0; i < Math.floor(len/chars); i++){
-        pages.push(text.substring(i*chars, (i+1)*chars));
-      }
-      if(Math.floor(len/chars) != len/chars){
-        pages.push(text.substring(Math.floor(len/chars)));
-	  }
+	  read("./testo.txt");
 
       function frwd(){
         page++;
@@ -44,6 +34,16 @@
 		} catch (error) {
 		    console.log(error);
 		}
+		const chars = 1239;
+	      const len = text.length;
+	      let pages = [];
+	
+	      for(let i = 0; i < Math.floor(len/chars); i++){
+	        pages.push(text.substring(i*chars, (i+1)*chars));
+	      }
+	      if(Math.floor(len/chars) != len/chars){
+	        pages.push(text.substring(Math.floor(len/chars)));
+		  }
 	}
     </script>
     <style>
