@@ -29,10 +29,12 @@
 		function bkwd(){
 		        page--;
 		        document.getElementById("leftPage").innerHTML = pages[page*2+1];
+			    document.getElementById("leftPage").style.backgroundColor = "#efedde";
 		        document.getElementById("rightPage").innerHTML = pages[page*2+2];
 		        if(page == -1){
 		          document.getElementById("bkwd").disabled = true;
 		          document.getElementById("leftPage").innerHTML = "";
+				  document.getElementById("leftPage").style.backgroundColor = "#FFFFFF";
 		          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
 		        }
 	    }
@@ -53,7 +55,7 @@
         font-family: 'Courier New', monospace;
       }
       #leftPage {
-        background-color: #efedde;
+        background-color: #ffffff;
         word-wrap: break-word;
         display: block;
         margin: auto;
