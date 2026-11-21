@@ -52,7 +52,12 @@
 			}
 		}
 		function updatePageNum(){
-			document.getElementById("pagNum").innerHTML = `Pagina: ${page-1} e ${page}`;
+			if(page > 0){
+				document.getElementById("pagNum").innerHTML = `Pagina: ${page-1} e ${page}`;
+			}
+			else{
+				document.getElementById("pagNum").innerHTML = `Pagina: copertina`;
+			}
 		}
     </script>
     <style>
@@ -83,15 +88,16 @@
         display: block;
         width: 100%;
       }
-      #bkwd {
-        transform: translate(4275%, -2500%);
-      }
-      #frwd {
-        transform: translate(4275%, -2500%);
-      }
+      button {
+		  transform: translate(4275%, -2500%);
+	  }
+	  #pagNum {
+		display: block;
+        margin: auto;
+	  }
     </style>
     <h2>IO E IL MERLO PARLANTE CON LA CUFFIA MAGGGICA</h2>
-	<p id="pagNum">Pagina: 0</p>
+	<p id="pagNum">Pagina: copertina</p>
     <div id="leftPage"></div>
     <div id="rightPage">
     <img id="cover" src="merloparlante.png">
