@@ -5,46 +5,46 @@
   </head>
   <body>
     <script>
-      let page = -1;
-	  read("./testo.txt");
-
-      function frwd(){
-        page++;
-        document.getElementById("leftPage").innerHTML = pages[page*2];
-        document.getElementById("rightPage").innerHTML = pages[page*2+1];
-        document.getElementById("bkwd").disabled = false;
-      }
-      function bkwd(){
-        page--;
-        document.getElementById("leftPage").innerHTML = pages[page*2+1];
-        document.getElementById("rightPage").innerHTML = pages[page*2+2];
-        if(page == -1){
-          document.getElementById("bkwd").disabled = true;
-          document.getElementById("leftPage").innerHTML = "";
-          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
-        }
-      }
-	async function read(file){
-		try {
-		    const response = await fetch(file);
-		    
-		    const text = await response.text();
-			console.log(text);
-			return text;
-		} catch (error) {
-		    console.log(error);
-		}
+      	let page = -1;
+		const text = (async() => await read("./testo.txt"))();
 		const chars = 1239;
-	      const len = text.length;
-	      let pages = [];
+		const len = text.length;
+		let pages = [];
 	
-	      for(let i = 0; i < Math.floor(len/chars); i++){
-	        pages.push(text.substring(i*chars, (i+1)*chars));
-	      }
-	      if(Math.floor(len/chars) != len/chars){
+	    for(let i = 0; i < Math.floor(len/chars); i++){
+	    	pages.push(text.substring(i*chars, (i+1)*chars));
+	    }
+	    if(Math.floor(len/chars) != len/chars){
 	        pages.push(text.substring(Math.floor(len/chars)));
-		  }
-	}
+		}
+
+		function frwd(){
+		    page++;
+	        document.getElementById("leftPage").innerHTML = pages[page*2];
+	        document.getElementById("rightPage").innerHTML = pages[page*2+1];
+	        document.getElementById("bkwd").disabled = false;
+		}
+	    function bkwd(){
+	        page--;
+	        document.getElementById("leftPage").innerHTML = pages[page*2+1];
+	        document.getElementById("rightPage").innerHTML = pages[page*2+2];
+	        if(page == -1){
+	          document.getElementById("bkwd").disabled = true;
+	          document.getElementById("leftPage").innerHTML = "";
+	          document.getElementById("rightPage").innerHTML = "<img id=\"cover\" src=\"merloparlante.png\">"
+	        }
+	    }
+		async function read(file){
+			try {
+			    const response = await fetch(file);
+			    
+			    const text = await response.text();
+				console.log(text);
+				return text;
+			} catch (error) {
+			    console.log(error);
+			}
+		}
     </script>
     <style>
       body {
