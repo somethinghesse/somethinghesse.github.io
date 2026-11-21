@@ -21,16 +21,16 @@
 			}
 		});
 		function frwd(){
-			    page++;
-		        document.getElementById("leftPage").innerHTML = pages[page*2];
+			    page+=2;
+		        document.getElementById("leftPage").innerHTML = pages[page-1];
 			    document.getElementById("leftPage").style.backgroundColor = "#efedde";
-		        document.getElementById("rightPage").innerHTML = pages[page*2+1];
+		        document.getElementById("rightPage").innerHTML = pages[page];
 		        document.getElementById("bkwd").disabled = false;
 		}
 		function bkwd(){
-		        page--;
-		        document.getElementById("leftPage").innerHTML = pages[page*2+1];
-		        document.getElementById("rightPage").innerHTML = pages[page*2+2];
+		        page-=2;
+		        document.getElementById("leftPage").innerHTML = pages[page-1];
+		        document.getElementById("rightPage").innerHTML = pages[page];
 		        if(page == -1){
 		          document.getElementById("bkwd").disabled = true;
 		          document.getElementById("leftPage").innerHTML = "";
