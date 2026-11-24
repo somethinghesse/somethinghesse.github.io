@@ -10,6 +10,7 @@
 		read("./testo.txt").then((result) => {
 			const text = result;
 			const chars = 1173;
+			const prevChars = 4405;
 			const len = text.length;
 			console.log(len);
 		
@@ -19,7 +20,7 @@
 		    if(Math.floor(len/chars) != len/chars){
 		        pages.push(text.substring(Math.floor(len/chars)*chars));
 			}
-			document.getElementById("carNum").innerHTML = `num. caratteri: ${len}`;
+			document.getElementById("carNum").innerHTML = `num. caratteri: ${len} (${len/prevChars}x in più dell'ultimo testo)`;
 		});
 		function frwd(){
 			    page+=2;
